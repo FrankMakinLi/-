@@ -1,0 +1,9 @@
+from WindPy import *
+import pandas as pd
+
+w.start()
+w.isconnected()
+
+errorcode,Mutual_Fund_Code=w.wset("sectorconstituent","date=2019-01-27;sectorid=2001000000000000",usedf=True)#get all Mutual Fund wind_code
+d=Mutual_Fund_Code['wind_code']
+w.wss("000001.OF", "unit_total,fund_investtype,fund_firstinvesttype,fund_custodianbank","unit=1;tradeDate=20190126")
